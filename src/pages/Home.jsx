@@ -12,7 +12,7 @@ const Home = () => {
                 <link rel="canonical" href="https://slasa.netlify.app" />
             </Helmet>
             <section className='page flexcol center' style={{height: '200vh'}}>
-{/* 
+             {/* 
                 <article><h1 className='headingBig' style={{ color: 'var(--codeSix)' }}>Best Deals</h1></article>
 
                 <article><h1 className='headingBig' style={{ color: 'var(--codeSix)' }}>Shop By Category</h1></article>

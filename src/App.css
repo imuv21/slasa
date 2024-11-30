@@ -292,7 +292,7 @@ button:focus {
 }
 
 
-/* Header and Footer */
+/* Header component */
 .whatsapp {
   position: fixed;
   bottom: 40px;
@@ -303,6 +303,7 @@ button:focus {
   z-index: 2;
   transition: var(--trans);
 }
+
 .whatsapp:hover {
   transform: scale(1.1);
 }
@@ -314,6 +315,7 @@ button:focus {
   justify-content: space-between;
   padding: 15px 150px;
 }
+
 .catHeader {
   width: 100%;
   display: flex;
@@ -328,6 +330,7 @@ button:focus {
   position: sticky;
   top: 0px;
 }
+
 .catItem {
   width: fit-content;
   display: flex;
@@ -340,9 +343,11 @@ button:focus {
   cursor: pointer;
   transition: var(--trans);
 }
+
 .catItem:hover {
   color: var(--codeFive);
 }
+
 .cartItem:hover .textBig {
   color: var(--codeFive);
 }
@@ -355,6 +360,7 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 .searchContTwo {
   position: relative;
   width: 100%;
@@ -362,6 +368,7 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 .searchCont .MuiSvgIcon-root {
   position: absolute;
   top: 5px;
@@ -371,6 +378,7 @@ button:focus {
   color: var(--codeThree);
   transition: var(--trans);
 }
+
 .searchContTwo .MuiSvgIcon-root {
   position: absolute;
   top: 5px;
@@ -380,6 +388,7 @@ button:focus {
   color: var(--codeThree);
   transition: var(--trans);
 }
+
 .searchCont input {
   width: 100%;
   padding: 10px 20px;
@@ -388,6 +397,7 @@ button:focus {
   border-radius: var(--brThree);
   transition: var(--trans);
 }
+
 .searchContTwo input {
   width: 100%;
   padding: 10px 20px;
@@ -400,6 +410,7 @@ button:focus {
 .header-burger {
   display: none;
 }
+
 .header-burger .MuiSvgIcon-root {
   width: 30px;
   height: 30px;
@@ -417,15 +428,18 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 .nav-mobile .textBig {
   color: var(--codeThree);
   cursor: pointer;
   transition: var(--trans);
   white-space: nowrap;
 }
+
 .nav-mobile .textBig:hover {
   color: var(--codeFive);
 }
+
 .nav-mobile .MuiSvgIcon-root {
   width: 25px;
   height: 25px;
@@ -433,6 +447,7 @@ button:focus {
   transition: var(--trans);
   cursor: pointer;
 }
+
 .nav-mobile .MuiSvgIcon-root:hover {
   color: var(--codeFive);
 }
@@ -440,6 +455,7 @@ button:focus {
 .cartIcon {
   position: relative;
 }
+
 .cartcount {
   position: absolute;
   top: -8px;
@@ -466,6 +482,7 @@ button:focus {
   gap: 15px;
   background-color: #1e1e1e;
 }
+
 .drawer a {
   width: 100%;
   display: flex;
@@ -475,6 +492,109 @@ button:focus {
   font-weight: 600;
   color: var(--codeOne);
 }
+
+
+/* footer component */
+.footer {
+  width: 100%;
+  padding: 40px 150px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--codeTwo);
+}
+
+.subFooter {
+  width: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subFooter img {
+  width: 200px;
+  height: auto;
+}
+
+.footerNav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.hiddeNav {
+  display: none;
+}
+
+.footerNav .text, .hiddeNav .text {
+  cursor: pointer;
+  transition: var(--trans);
+}
+.footerNav .text:hover {
+  color: var(--codeFive);
+}
+.hiddeNav .text:hover {
+  color: var(--codeFive);
+}
+
+.footerSupport {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.subFooterTwo {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLogos {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+.footerLogos img {
+  width: 40px;
+  height: auto;
+  aspect-ratio: 4 / 2.5;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 2px var(--codeFour));
+}
+.footerline {
+  width: 100%;
+  height: 1px;
+  background-color: var(--codeThree);
+}
+
+
+
+
 
 
 /* home - category  */
@@ -525,15 +645,52 @@ button:focus {
 
 
 
+
+
+
+
+
+
+
 @media screen and (max-width: 1000px) {
   .header {
     padding: 15px 20px;
   }
+
   .page {
     padding: 20px;
   }
+
+  .footer {
+    padding: 30px 20px;
+  }
+
   .catHeader {
     padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    gap: 10px;
+  }
+  .subFooter {
+    justify-content: space-between;
+  }
+  .navCont {
+    width: fit-content;
+  }
+  .footerNav {
+    display: none;
+  }
+  .hiddeNav {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+    gap: 10px;
   }
 }
 
@@ -546,14 +703,39 @@ button:focus {
 }
 
 @media screen and (max-width: 500px) {
+  .subFooterTwo {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .footerLogos img {
+    width: 30px;
+    height: auto;
+    aspect-ratio: 4 / 2.5;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 2px var(--codeFour));
+  }
+  .footerSupport{
+    gap: 2px;
+  }
+  .subFooter img {
+    width: 120px;
+    height: auto;
+  }
   .header {
     padding: 10px 20px;
     border-bottom: var(--border);
   }
+
   .header-burger {
     display: flex;
   }
-  .catHeader, .searchCont {
+
+  .catHeader,
+  .searchCont {
     display: none;
   }
 }
