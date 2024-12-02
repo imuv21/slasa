@@ -100,8 +100,8 @@ const Signup = () => {
                 <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
                 <link rel="canonical" href="https://slasa.netlify.app" />
             </Helmet>
-            <div className='page flex center' style={{ height: '100vh' }}>
-                <form className="authBox flexcol center" onSubmit={handleSignup}>
+            <div className='page primary-bg flex center' style={{ height: '100vh' }}>
+                <form className="authBox flexcol " onSubmit={handleSignup}>
                     <h1 className="heading">Create your account</h1>
 
                     <div className="minBox flexcol center">
@@ -137,7 +137,9 @@ const Signup = () => {
                     <button type='submit' disabled={isSubmitting}>{isSubmitting ? 'Signing up...' : 'Signup'}</button>
                     {signError?.length > 0 && <p className="error flex center">Please correct the above errors.</p>}
                     {siGenErrors && <p className="error flex center">{siGenErrors}</p>}
-                    <p className="text">Already have an account? <Link className='text hover' to='/login'>Click here</Link></p>
+                    <div className="minBox flexcol center">
+                    <p className="text ">Already have an account? <Link className='text hover' to='/login'>Click here</Link></p>
+                    </div>
                 </form>
             </div>
         </Fragment>

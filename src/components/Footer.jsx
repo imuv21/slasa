@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import visa from '../assets/images/visa.png';
 import upi from '../assets/images/upi.png';
@@ -19,12 +20,12 @@ const Footer = () => {
         <div className="navCont">
           <div className='footerNav'>
             <p className="text">About us</p>
-            <p className="text">Contact us</p>
+            <Link to='/contact-us' className="text">Contact us</Link>
             <p className="text">Privacy Policy</p>
             <p className="text">Terms of Service</p>
             <p className="text">Returns & refunds</p>
             <p className="text">Support</p>
-            <p className="text">FAQ</p>
+            <Link to='/faq' className="text">FAQ</Link>
           </div>
           <div className='footerSupport'>
             <p className="text">Need Help?</p>

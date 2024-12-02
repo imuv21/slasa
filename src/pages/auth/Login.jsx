@@ -71,27 +71,36 @@ const Login = () => {
         <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
         <link rel="canonical" href="https://slasa.netlify.app/login" />
       </Helmet>
-      <div className='page flex center' style={{ height: '100vh' }}>
-        <form className="authBox flexcol center" onSubmit={handleLogin}>
+      <div className='page primary-bg flex center' style={{ height: '100vh' }}>
+        <form className="authBox flexcol " onSubmit={handleLogin}>
           <h1 className="heading">Login to your account</h1>
 
-          <input type="email" name='email' autoComplete='email' placeholder='Enter your email...' value={formValues.email} onChange={handleChange} />
-          {emailError && <p className="error">{emailError.msg}</p>}
-
-          <div className="wh relative password">
-            <input type={passwordVisible ? "text" : "password"} className='wh' name='password' autoComplete="new-password" placeholder='Enter your password...' value={formValues.password} onChange={handleChange} />
-            <span onClick={togglePasswordVisibility}>
-              {passwordVisible ? <VisibilityIcon /> : <VisibilityOffIcon />}
-            </span>
+          <div className="minBox flexcol center">
+            <input type="email" name='email' autoComplete='email' placeholder='Enter your email...' required value={formValues.email} onChange={handleChange} />
+            {emailError && <p className="error">{emailError.msg}</p>}
           </div>
+
+          <div className="minBox flexcol center">
+            <div className="wh relative password">
+              <input type={passwordVisible ? "text" : "password"} className='wh' name='password' required autoComplete="new-password" placeholder='Enter your password...' value={formValues.password} onChange={handleChange} />
+              <span onClick={togglePasswordVisibility}>
+                {passwordVisible ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </span>
+            </div>
+          </div>
+          <div className='forget-password-text '>
+            <Link className='hover ' to='/forgot-password'>Forgot Password ?</Link>
+          </div>
+
           {passwordError && <p className="error">{passwordError.msg}</p>}
 
-          <button type='submit' disabled={isSubmitting}>{isSubmitting ? 'Logging in...' : 'Login'}</button>
+          <button type='submit' disabled={isSubmitting}>{isSubmitting ? 'Logging in...' : 'LOGIN'}</button>
+
           {logError?.length > 0 && <p className="error flex center">Please correct the above errors.</p>}
           {logGenErrors && <p className="error flex center">{logGenErrors}</p>}
           <div className="minBox flexcol center">
-            <p className="text">Don't have an account? <Link className='text hover' to='/signup'>Click here</Link></p>
-            <p className="text">Now what? <Link className='text hover' to='/forgot-password'>Forgot your password again!!</Link></p>
+            <p className="text">Don't have an account? <Link className='text hover' to='/signup'>Sign Up</Link></p>
+
           </div>
         </form>
       </div>

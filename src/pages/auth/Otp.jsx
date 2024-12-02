@@ -107,13 +107,13 @@ const Otp = () => {
                 <link rel="canonical" href="https://slasa.netlify.app" />
             </Helmet>
 
-            <div className='page flex center' style={{ height: '100vh' }}>
+            <div className='page flex center primary-bg' style={{ height: '100vh' }}>
                 <div className="authBox flexcol center" style={{ gap: '30px' }}>
                     <h1 className="heading">Enter the OTP sent to your email</h1>
 
-                    <div className="flex center g20">
+                    <div className="flex  g10" style={{justifyContent:'space-between'}}>
                         {otpDigits.map((digit, index) => (
-                            <input key={index} value={digit} maxLength={1} style={{ width: '50px' }}
+                            <input key={index} value={digit} maxLength={1} className='otp-input'
                                 ref={el => (otpInputs.current[index] = el)}
                                 onChange={e => handleInputChange(index, e.target.value)}
                                 onKeyDown={e => handleKeyDown(e, index)}
@@ -122,7 +122,7 @@ const Otp = () => {
                     </div>
 
                     <div className='flexcol center g10'>
-                        <button style={{ width: 'fit-content' }} disabled={timerRunning} className={timerRunning ? "disabled" : ""} onClick={handleResendClick}>
+                        <button  style={{ width: 'fit-content' }} disabled={timerRunning} className={ timerRunning ? "disabled otp-btn" : "otp-btn" } onClick={handleResendClick}>
                             {timerRunning ? `Resend OTP in ${timeLeft}` : "Resend OTP"}
                         </button>
                         <Link to="/signup" className='hover'>Back</Link>

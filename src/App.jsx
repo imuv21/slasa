@@ -15,13 +15,13 @@ const Otp = lazy(() => import('./pages/auth/Otp'));
 
 //private
 const Home = lazy(() => import('./pages/Home'));
-
-
+const ContactUs = lazy(() => import('./pages/static/ContactUs'));
+const Faq = lazy(() => import('./pages/static/Faq'));
 
 
 function App() {
 
-  const user = true;
+  const user = false;
 
   return (
     <BrowserRouter>
@@ -31,7 +31,7 @@ function App() {
 
           {/* private */}
           <Route element={<Protector user={user} />}>
-            <Route path='/' element={<Layout><Home /></Layout>} />
+            
           </Route>
 
           {/* public */}
@@ -42,7 +42,10 @@ function App() {
           </Route>
 
           {/* both */}
-          <Route path='/loader' element={<Loader />} />
+          <Route path='/loader' element={<Layout><Loader /></Layout>} />
+          <Route path='/' element={<Layout><Home /></Layout>} />
+          <Route path='/contact-us' element={<Layout><ContactUs /></Layout>} />
+          <Route path='/faq' element={<Layout><Faq /></Layout>} />
 
           {/* not found */}
           <Route path='*' element={<div className='page flex center wh'>Are you kidding me? Kuchh bhi!</div>} />
