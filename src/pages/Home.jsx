@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { products } from '../assets/Schema';
 import Grids from '../components/Grids';
-import homepage from "../assets/images/homepage.jpg";
 import proimg from '../assets/images/proimg1.png';
 import proimg2 from '../assets/images/proimg2.png';
 import more from '../assets/images/more.png';
@@ -10,6 +9,8 @@ import more from '../assets/images/more.png';
 
 
 const Home = () => {
+
+    const homepage = 'https://images.unsplash.com/photo-1599104040457-fe0e8c9ae77e';
 
     return (
         <Fragment>
