@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/sett-logo.png';
 import visa from '../assets/images/visa.png';
 import upi from '../assets/images/upi.png';
 import paypal from '../assets/images/paypal.png';

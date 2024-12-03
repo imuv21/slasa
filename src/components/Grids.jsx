@@ -7,7 +7,7 @@ const Grids = ({ nameOne, nameTwo, productData }) => {
 
     return (
         <section className='TwoGrids'>
-            <article className="gridCont" style={{ backgroundColor: '#00dbfc' }}>
+            <article className="gridCont">
                 <h1 className="heading">&nbsp;{nameOne}</h1>
 
                 <div className="gridOne">
@@ -20,7 +20,7 @@ const Grids = ({ nameOne, nameTwo, productData }) => {
 
                 <Link to='/' className='viewBtn atag'>View More</Link>
             </article>
-            <article className="gridCont" style={{ backgroundColor: '#b132ff' }}>
+            <article className="gridCont">
                 <h1 className="heading">&nbsp;{nameTwo}</h1>
 
                 <div className="gridTwo">

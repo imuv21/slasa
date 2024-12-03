@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { products } from '../assets/Schema';
+import ProductCard from '../components/ProductCard';
 import Grids from '../components/Grids';
 import proimg from '../assets/images/proimg1.png';
 import proimg2 from '../assets/images/proimg2.png';
 import more from '../assets/images/more.png';
+import returnimg from '../assets/images/return-box.png';
+import credit from '../assets/images/credit-card.png';
+import product from '../assets/images/shopping-cart.png';
+import shipping from '../assets/images/free-delivery.png';
+import people from '../assets/images/people.png';
 
 
 
@@ -48,6 +54,73 @@ const Home = () => {
                 <div className="subPage flexcol center">
                     <Grids nameOne={'CANVAS COLLECTION'} nameTwo={'NEON SIGNS'} productData={products} />
                 </div>
+
+                <section className="featureProducts">
+                    <h1 className='heading'>Featured Products</h1>
+
+                    <div className="fpGrid">
+                        {products && products.length > 0 && products.map((item) => (
+                            <Fragment key={item.productId}>
+                                <ProductCard id={item.productId} name={item.name} category={item.category} image={item.image} salePrice={item.salePrice} />
+                            </Fragment>
+                        ))}
+                    </div>
+                </section>
+
+                <section className="subPage flexcol center">
+                    <div className="collection">
+                        <article className="colOne">
+                        </article>
+                        <article className="colTwo">
+                        </article>
+                    </div>
+                    <article className="newsletter">
+                        <h1 className="heading">Subscribe To Our Newsletter</h1>
+                        <p className='text'>Stay updated about our products, news, and get 10% Discount Voucher.</p>
+                    </article>
+                </section>
+
+                <section className="features">
+
+                    <article>
+                        <img src={returnimg} alt="return" />
+                        <div className="fdetails">
+                            <h1 className="text">Hassle Free Returns</h1>
+                            <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
+                        </div>
+                    </article>
+                    <article>
+                        <img src={credit} alt="credit" />
+                        <div className="fdetails">
+                            <h1 className="text">Hassle Free Returns</h1>
+                            <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
+                        </div>
+                    </article>
+                    <article>
+                        <img src={product} alt="product" />
+                        <div className="fdetails">
+                            <h1 className="text">Hassle Free Returns</h1>
+                            <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
+                        </div>
+                    </article>
+                    <article>
+                        <img src={shipping} alt="shipping" />
+                        <div className="fdetails">
+                            <h1 className="text">Hassle Free Returns</h1>
+                            <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
+                        </div>
+                    </article>
+                    <article>
+                        <img src={people} alt="people" />
+                        <div className="fdetails">
+                            <h1 className="text">Hassle Free Returns</h1>
+                            <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
+                        </div>
+                    </article>
+
+                </section>
+
+                
             </div>
         </Fragment>
     );

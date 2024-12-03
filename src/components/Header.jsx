@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpandMore, Menu } from '@mui/icons-material';
 import Drawer from '@mui/material/Drawer';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
