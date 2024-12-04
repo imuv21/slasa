@@ -7,31 +7,32 @@ export const images = [
 ];
 
 export const productDetail = {
-    name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+    name: 'Danya stand',
+    category: 'Display stand',
     originalPrice: 1498,
     salePrice: 953,
-    onestar: 42,
-    twostar: 0,
-    threestar: 18,
-    fourstar: 35,
-    fivestar: 57,
     imageOne: 'https://herbalmax.in/cdn/shop/files/1st-image-color-background-l_glutathione_1.png?v=1731665236&width=823',
     imageTwo: 'https://herbalmax.in/cdn/shop/files/710u_e-myWL._SL1500_d5ce55f8-708e-4cf6-b3e6-61d8cb83889a.png?v=1731665232&width=823',
     imageThree: 'https://herbalmax.in/cdn/shop/files/60-l-glutathione-tablet-for-glowing-skin-reduce-pigmentation-for-original-imah3abwqhztgtp3.jpg?v=1731665236&width=823',
     imageFour: 'https://herbalmax.in/cdn/shop/files/71z4kkYfsuL._SL1500_9b73925c-bcca-44a7-892f-2e8119492a22.png?v=1731665232&width=823',
     imageFive: 'https://herbalmax.in/cdn/shop/files/last_6657254ff358b.jpg?v=1731665229&width=823',
     productId: 'sgrehkliulrhtbtr',
-    info: 'Vitamin B12 Capsules are designed to support your daily energy levels and mental focus. Each easy-to-swallow capsule provides essential nutrients, including Vitamin B12, which may help you maintain a more vibrant, energetic lifestyle. Simple, effective, and easy to incorporate into your routine.',
+    info: 'info about the product',
+    reviews: [],
+    ratings: 4.5,
 };
 
 export const products = [ 
     {
-        name: '3Pcs Modern Abstract Wall Art Home Decor Rainbow Art Print Canvas Painting Geometric Poster Neutral Boho Wall Pictures 50X70Cm No Frame',
-        category: 'Printed Canvas',
+        name: 'Danya stand',
+        category: 'Display stand',
         originalPrice: 1498,
         salePrice: 953,
         image: 'https://bestpricearts.com/wp-content/uploads/2023/08/61Pq5E-AxcL._AC_SL1000_-300x300.jpg',
         productId: 'sgrehkliulrhtbtr',
+        ratings: 4.5,
+        reviews: [],
+        info: '',
     },
     {
         name: 'Vintage Floral Botanical Prints Set of 3 Wall Art Flower Painting for Bedroom and Living Room Decor',

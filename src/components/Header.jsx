@@ -7,15 +7,15 @@ import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 const Header = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector((state) => state.auth.user);
+    const user = false;
+    const [isHovered, setIsHovered] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     //burger
@@ -37,13 +37,23 @@ const Header = () => {
                     <SearchIcon />
                 </div>
                 <div className="nav-mobile">
-                    {/* <h1 className='textBig'>Log in</h1>
-                    <h1 className='textBig'>Sign up</h1> */}
-                    <div className="cartIcon">
+                    {!user && <Link to="/login" className="cartIcon"><h1 className='textBig'>Log in</h1></Link>}
+                    {!user && <Link to="/signup" className="cartIcon"><h1 className='textBig'>Sign up</h1></Link>}
+                    {user && <Link to="/cart" className="cartIcon">
                         <LocalMallIcon />
                         <div className="cartcount">12</div>
+                    </Link>}
+                    <div className="cartIcon" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                        <AccountCircleIcon className='header-icon' />
+                        <div className={`hover-div ${isHovered ? 'visible' : ''}`}>
+                            <Link to='/' className='text'>Home page</Link>
+                            {user && <Link to='/profile' className='text'>Profile</Link>}
+                            {user && <Link to='/orders' className='text'>Orders</Link>}
+                            <Link to='/contact-us' className='text'>Contact us</Link>
+                            <Link to='/about-us' className='text'>About us</Link>
+                            {user && <Link to='/logout' className='text'>Logout</Link>}
+                        </div>
                     </div>
-                    <AccountCircleIcon />
                 </div>
             </div>
             <section className="catHeader">
@@ -82,10 +92,18 @@ const Header = () => {
                         <input type="text" placeholder='Search products...' />
                         <SearchIcon />
                     </div>
-                    {user && <Link to="/">Home</Link>}
+
+                    <Link to="/">Home page</Link>
+                    {!user && <Link to="/login">Login</Link>}
+                    {!user && <Link to="/signup">Signp</Link>}
+
+                    {user && <Link to='/profile' className='text'>Profile</Link>}
                     {user && <Link to="/cart">Cart</Link>}
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">Signp</Link>
+                    {user && <Link to='/orders' className='text'>Orders</Link>}
+
+                    <Link to='/contact-us' className='text'>Contact us</Link>
+                    <Link to='/about-us' className='text'>About us</Link>
+
                     {user && <Link to="/logout">Logout</Link>}
                 </div>
             </Drawer>

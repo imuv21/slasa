@@ -25,6 +25,7 @@ const Home = () => {
                 <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
                 <link rel="canonical" href="https://slasa.netlify.app/" />
             </Helmet>
+
             <div className='page flexcol center'>
                 <img className='homeimg' src={homepage} />
 
@@ -67,21 +68,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="subPage flexcol center">
-                    <div className="collection">
-                        <article className="colOne">
-                        </article>
-                        <article className="colTwo">
-                        </article>
-                    </div>
-                    <article className="newsletter">
-                        <h1 className="heading">Subscribe To Our Newsletter</h1>
-                        <p className='text'>Stay updated about our products, news, and get 10% Discount Voucher.</p>
-                    </article>
-                </section>
-
                 <section className="features">
-
                     <article>
                         <img src={returnimg} alt="return" />
                         <div className="fdetails">
@@ -117,11 +104,9 @@ const Home = () => {
                             <h2 className="textSmol">Easy and flexible 7 days return policy</h2>
                         </div>
                     </article>
-
                 </section>
-
-                
             </div>
+
         </Fragment>
     );
 };
