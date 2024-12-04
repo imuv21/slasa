@@ -91,7 +91,7 @@ const Login = () => {
           {logGenErrors && <p className="error flex center">{logGenErrors}</p>}
           <div className="minBox flexcol center">
             <p className="text">Don't have an account? <Link className='text hover' to='/signup'>Click here</Link></p>
-            <p className="text">Now what? <Link className='text hover' to='/forgot-password'>Forgot your password again!!</Link></p>
+            <p className="text">Now what? <Link className='text hover' to='/forgot-password'>Forgot your password?</Link></p>
           </div>
         </form>
       </div>

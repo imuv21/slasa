@@ -53,7 +53,7 @@ const Home = () => {
                 </div>
 
                 <div className="subPage flexcol center">
-                    <Grids nameOne={'CANVAS COLLECTION'} nameTwo={'NEON SIGNS'} productData={products} />
+                    <Grids nameOne={'Best Deals'} nameTwo={'Best Sellers'} productData={products} />
                 </div>
 
                 <section className="featureProducts">

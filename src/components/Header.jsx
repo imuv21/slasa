@@ -2,19 +2,17 @@ import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpandMore, Menu } from '@mui/icons-material';
-import Drawer from '@mui/material/Drawer';
 import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 const Header = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = false;
+    const user = true;
     const [isHovered, setIsHovered] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,7 +25,7 @@ const Header = () => {
         <Fragment>
             <div className='header'>
                 <div className="flex center g10">
-                    <div className='header-burger' onClick={toggleMobileMenu} >
+                    <div className='header-burger' onClick={toggleMobileMenu}>
                         <Menu />
                     </div>
                     <img className='logo' src={logo} alt="slasa" />
@@ -43,7 +41,7 @@ const Header = () => {
                         <LocalMallIcon />
                         <div className="cartcount">12</div>
                     </Link>}
-                    <div className="cartIcon" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <div className="cartIcon profileIcon" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                         <AccountCircleIcon className='header-icon' />
                         <div className={`hover-div ${isHovered ? 'visible' : ''}`}>
                             <Link to='/' className='text'>Home page</Link>
@@ -56,38 +54,40 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
             <section className="catHeader">
                 <article className="catItem">
-                    <h1 className='textBig'>Shop All</h1>
+                    <h1 className='textBig'>All Services</h1>
                     <ExpandMore />
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Shop by Occasions</h1>
+                    <h1 className='textBig'>All Categories</h1>
                     <ExpandMore />
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Custom Made</h1>
-                    <ExpandMore />
+                    <h1 className='textBig'>Display Stand Acrylic</h1>
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Canvas Paintings</h1>
-                    <ExpandMore />
+                    <h1 className='textBig'>Gift Items</h1>
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Neon</h1>
+                    <h1 className='textBig'>Digital Printing</h1>
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>New Arrivals</h1>
+                    <h1 className='textBig'>Display Stand</h1>
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Today's Deals</h1>
+                    <h1 className='textBig'>Display Danglers</h1>
                 </article>
                 <article className="catItem">
-                    <h1 className='textBig'>Flash Sale</h1>
+                    <h1 className='textBig'>Shop Now</h1>
                 </article>
             </section>
-            <Drawer anchor="left" open={mobileMenuOpen} onClose={toggleMobileMenu}>
-                <div className='drawer' onClick={toggleMobileMenu} onKeyDown={toggleMobileMenu}>
+
+            {mobileMenuOpen && <div className="overlay visible" onClick={toggleMobileMenu}></div>}
+
+            <div className={`drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <div className="drawer-content" onClick={(e) => e.stopPropagation()}>
                     <div className='searchContTwo'>
                         <input type="text" placeholder='Search products...' />
                         <SearchIcon />
@@ -106,7 +106,8 @@ const Header = () => {
 
                     {user && <Link to="/logout">Logout</Link>}
                 </div>
-            </Drawer>
+            </div>
+
         </Fragment>
     )
 };
