@@ -16,32 +16,44 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = true;
+    const user = useSelector((state) => state.auth.user);
     const [isHovered, setIsHovered] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [searchInput, setSerachInput] = useState('');
+    const [searchInput, setSearchInput] = useState('');
 
     //burger
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
-    // const logoutHandler = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         dispatch(logout());
-    //         sessionStorage.clear();
-    //         toast(<div className='flex center g5'> < VerifiedIcon /> Logout successfully!</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
-    //         navigate('/login');
-    //     } catch (error) {
-    //         toast(<div className='flex center g5'> < NewReleasesIcon /> Error logging out...</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
-    //     }
-    // }
+    const home = () => {
+        navigate('/');
+    }
 
-    // const postSearch = (e) => {
-    //     e.preventDefault();
-    //     navigate(`/search-results?query=${searchInput}`);
-    // }
+    const logoutHandler = async (e) => {
+        e.preventDefault();
+        try {
+            dispatch(logout());
+            sessionStorage.clear();
+            toast(<div className='flex center g5'> < VerifiedIcon /> Logout successfully!</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+            navigate('/login');
+        } catch (error) {
+            toast(<div className='flex center g5'> < NewReleasesIcon /> Error logging out...</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+        }
+    }
+
+    const postSearch = (e) => {
+        e.preventDefault();
+        navigate(`/search-results?query=${searchInput}`);
+        setSearchInput('');
+    }
+
+    const searchHandler = (e) => {
+        if (e.key === 'Enter') {
+            postSearch(e);
+        }
+    }
+
 
     return (
         <Fragment>
@@ -51,11 +63,11 @@ const Header = () => {
                     <div className='header-burger' onClick={toggleMobileMenu}>
                         <Menu />
                     </div>
-                    <img className='logo' src={logo} alt="slasa" />
+                    <img className='logo' onClick={home} src={logo} alt="slasa" />
                 </div>
                 <div className='searchCont'>
-                    <input type="text" placeholder='Search products...' />
-                    <SearchIcon />
+                    <input type="text" value={searchInput} placeholder='Search products...' onChange={(e) => setSearchInput(e.target.value)} onKeyDown={searchHandler} />
+                    <SearchIcon onClick={postSearch} />
                 </div>
                 <div className="nav-mobile">
                     {!user && <Link to="/login" className="cartIcon"><h1 className='textBig'>Log in</h1></Link>}
@@ -72,7 +84,7 @@ const Header = () => {
                             {user && <Link to='/orders' className='text'>Orders</Link>}
                             <Link to='/contact-us' className='text'>Contact us</Link>
                             <Link to='/about-us' className='text'>About us</Link>
-                            {user && <Link to='/logout' className='text'>Logout</Link>}
+                            {user && <Link onClick={logoutHandler} className='text'>Logout</Link>}
                         </div>
                     </div>
                 </div>
@@ -127,7 +139,7 @@ const Header = () => {
                     <Link to='/contact-us' className='text'>Contact us</Link>
                     <Link to='/about-us' className='text'>About us</Link>
 
-                    {user && <Link to="/logout">Logout</Link>}
+                    {user && <Link onClick={logoutHandler}>Logout</Link>}
                 </div>
             </div>
 
