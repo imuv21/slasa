@@ -19,13 +19,12 @@ const Footer = () => {
         <img src={logo} alt="logo" />
         <div className="navCont">
           <div className='footerNav'>
-            <p className="text">About us</p>
+            <Link to='/about-us' className="text">About us</Link>
             <Link to='/contact-us' className="text">Contact us</Link>
-            <p className="text">Privacy Policy</p>
-            <p className="text">Terms of Service</p>
-            <p className="text">Returns & refunds</p>
-            <p className="text">Support</p>
-            <Link to='/faq' className="text">FAQ</Link>
+            <Link to='/privacy-policy' className="text">Privacy Policy</Link>
+            <Link to='/terms-and-conditions' className="text">Terms And Conditions</Link>
+            <Link to='/return-policy' className="text">Returns & refunds</Link>
+            <Link to='/shipping-policy' className="text">Shipping Policy</Link>
           </div>
           <div className='footerSupport'>
             <p className="text">Need Help?</p>
@@ -35,13 +34,12 @@ const Footer = () => {
       </div>
 
       <div className="hiddeNav">
-        <p className="text">About us</p>
-        <p className="text">Contact us</p>
-        <p className="text">Privacy Policy</p>
-        <p className="text">Terms of Service</p>
-        <p className="text">Returns & refunds</p>
-        <p className="text">Support</p>
-        <p className="text">FAQ</p>
+        <Link to='/about-us' className="text">About us</Link>
+        <Link to='/contact-us' className="text">Contact us</Link>
+        <Link to='/privacy-policy' className="text">Privacy Policy</Link>
+        <Link to='/terms-and-conditions' className="text">Terms And Conditions</Link>
+        <Link to='/return-policy' className="text">Returns & refunds</Link>
+        <Link to='/shipping-policy' className="text">Shipping Policy</Link>
       </div>
 
       <div className="footerline"></div>

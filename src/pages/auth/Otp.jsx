@@ -34,16 +34,16 @@ const Otp = () => {
 
         if (isOtpComplete) {
             try {
-                const otpResponse = await dispatch(verifyOtp({ email: signupData.email, otp: newOtpDigits.join('') })).unwrap();
+                const otpResponse = await dispatch(verifyOtp({ otp: newOtpDigits.join(''), email: signupData.email })).unwrap();
 
-                if (otpResponse.status === 'success') {
-                    toast(<div className='flex center g5'> < VerifiedIcon /> {otpResponse.message}</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+                if (otpResponse.success === true) {
+                    toast(<div className='flex center g5'> < VerifiedIcon /> Email verified. Please login now.</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
                     navigate('/login');
                 } else {
-                    toast(<div className='flex center g5'> < NewReleasesIcon /> {`OTP verification failed ${otpResponse.message}`}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+                    toast(<div className='flex center g5'> < NewReleasesIcon /> {`OTP verification failed`}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
                 }
             } catch (error) {
-                toast(<div className='flex center g5'> < NewReleasesIcon /> {`OTP verification failed ${error.message}`}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+                toast(<div className='flex center g5'> < NewReleasesIcon /> {`OTP verification failed`}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
             }
         }
     };
@@ -64,7 +64,7 @@ const Otp = () => {
     }, []);
 
     //time
-    const [timeLeft, setTimeLeft] = useState(130);
+    const [timeLeft, setTimeLeft] = useState(190);
     const [timerRunning, setTimerRunning] = useState(true);
     useEffect(() => {
         if (timerRunning) {
@@ -85,35 +85,36 @@ const Otp = () => {
         try {
             const response = await dispatch(signupUser(signupData)).unwrap();
 
-            if (response.status === "success") {
+            if (response.status === true) {
                 toast(<div className='flex center g5'> < VerifiedIcon /> {response.message}</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
-                setTimeLeft(130);
+                setTimeLeft(190);
                 setTimerRunning(true);
             } else {
-                toast(<div className='flex center g5'> < NewReleasesIcon /> {'Signup failed: ' + response.message}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+                toast(<div className='flex center g5'> < NewReleasesIcon /> Something went wrong!</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
             }
 
         } catch (error) {
-            toast(<div className='flex center g5'> < NewReleasesIcon /> {error.message}</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+            toast(<div className='flex center g5'> < NewReleasesIcon /> Something went wrong!</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
         }
     };
 
 
     return (
         <Fragment>
+
             <Helmet>
                 <title>Slasa - Amazing deals, unbeatable prices!</title>
                 <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
                 <link rel="canonical" href="https://slasa.netlify.app/verify-otp" />
-            </Helmet>
+            </Helmet >
 
-            <div className='pageTwo flex center' style={{ height: '100vh' }}>
+            <div className='page flex center' style={{ height: '100vh', backgroundColor: 'var(--authCode)' }}>
                 <div className="authBox flexcol center" style={{ gap: '30px' }}>
-                    <h1 className="heading" style={{ textAlign: 'center' }}>Enter the OTP sent to your email</h1>
+                    <h1 className="heading">Enter the OTP sent to your email</h1>
 
                     <div className="flex center g20">
                         {otpDigits.map((digit, index) => (
-                            <input key={index} value={digit} maxLength={1} className='otpBox'
+                            <input key={index} value={digit} maxLength={1} style={{ width: '50px' }}
                                 ref={el => (otpInputs.current[index] = el)}
                                 onChange={e => handleInputChange(index, e.target.value)}
                                 onKeyDown={e => handleKeyDown(e, index)}
@@ -122,7 +123,7 @@ const Otp = () => {
                     </div>
 
                     <div className='flexcol center g10'>
-                        <button style={{ width: 'fit-content' }} disabled={timerRunning} className={timerRunning ? "disabled" : ""} onClick={handleResendClick}>
+                        <button style={{ border: 'none', width: '100%' }} disabled={timerRunning} className={timerRunning ? "disabled" : ""} onClick={handleResendClick}>
                             {timerRunning ? `Resend OTP in ${timeLeft}` : "Resend OTP"}
                         </button>
                         <Link to="/signup" className='hover'>Back</Link>

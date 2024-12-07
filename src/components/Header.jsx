@@ -2,10 +2,14 @@ import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpandMore, Menu } from '@mui/icons-material';
+import { toast } from 'react-hot-toast';
+
 import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
 
 
 const Header = () => {
@@ -15,14 +19,33 @@ const Header = () => {
     const user = true;
     const [isHovered, setIsHovered] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [searchInput, setSerachInput] = useState('');
 
     //burger
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    // const logoutHandler = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         dispatch(logout());
+    //         sessionStorage.clear();
+    //         toast(<div className='flex center g5'> < VerifiedIcon /> Logout successfully!</div>, { duration: 3000, position: 'top-center', style: { color: 'rgb(0, 189, 0)' }, className: 'success', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+    //         navigate('/login');
+    //     } catch (error) {
+    //         toast(<div className='flex center g5'> < NewReleasesIcon /> Error logging out...</div>, { duration: 3000, position: 'top-center', style: { color: 'red' }, className: 'failed', ariaProps: { role: 'status', 'aria-live': 'polite' } });
+    //     }
+    // }
+
+    // const postSearch = (e) => {
+    //     e.preventDefault();
+    //     navigate(`/search-results?query=${searchInput}`);
+    // }
+
     return (
         <Fragment>
+            
             <div className='header'>
                 <div className="flex center g10">
                     <div className='header-burger' onClick={toggleMobileMenu}>
