@@ -2,8 +2,6 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
-import { updateProfile, updateDetails, clearErrors } from '../../slices/authSlice';
-import { seriesSchema, locationSchema } from '../../components/Schema';
 import DOMPurify from 'dompurify';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
