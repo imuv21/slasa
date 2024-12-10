@@ -20,7 +20,7 @@ const Profile = lazy(() => import('./pages/auth/Profile'));
 
 //both
 const Home = lazy(() => import('./pages/Home'));
-
+const ProductDetails = lazy(() => import('./pages/shop/ProductDetails'));
 const ContactUs = lazy(() => import('./pages/static/ContactUs'));
 const AboutUs = lazy(() => import('./pages/static/AboutUs'));
 const Privacy = lazy(() => import('./pages/static/Privacy'));
@@ -56,7 +56,7 @@ function App() {
 
           {/* both */}
           <Route path='/' element={<Layout><Home /></Layout>} />
-
+          <Route path='/product-details/:id' element={<Layout><ProductDetails /></Layout>} />
           <Route path='/contact-us' element={<Layout><ContactUs /></Layout>} />
           <Route path='/about-us' element={<Layout><AboutUs /></Layout>} />
           <Route path='/privacy-policy' element={<Layout><Privacy /></Layout>} />
