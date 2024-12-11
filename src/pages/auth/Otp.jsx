@@ -106,7 +106,7 @@ const Otp = () => {
                 <title>Slasa - Amazing deals, unbeatable prices!</title>
                 <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
                 <link rel="canonical" href="https://slasa.netlify.app/verify-otp" />
-            </Helmet >
+            </Helmet>
 
             <div className='page flex center' style={{ height: '100vh', backgroundColor: 'var(--authCode)' }}>
                 <div className="authBox flexcol center" style={{ gap: '30px' }}>

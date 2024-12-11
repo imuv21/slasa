@@ -220,7 +220,64 @@ export const quests = [
     },
 ];
 
-//category
+// orders
+export const orders = [
+    {
+        orderId: 'sdghwkgphirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerfour,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerone,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerthree,
+                productId: 'sgrehklidrherhryhyulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphrjtyjirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannertwo,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerfour,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+        ],
+    },
+];
+
+// category
 
 export const categories = [
     'Gardening', 'Wood', 'Acrylic', 'Neon', 'Toys', 'Stationary', 'Customize'

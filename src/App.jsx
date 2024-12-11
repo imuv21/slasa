@@ -2,6 +2,7 @@ import './App.css';
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { useSelector } from 'react-redux';
 
 //components
 import Loader from './components/Loader/Loader';
@@ -17,10 +18,15 @@ const NewPassword = lazy(() => import('./pages/auth/NewPassword'));
 
 //private
 const Profile = lazy(() => import('./pages/auth/Profile'));
+const Cart = lazy(() => import('./pages/shop/Cart'));
+const Order = lazy(() => import('./pages/shop/Order'));
 
 //both
 const Home = lazy(() => import('./pages/Home'));
+const Search = lazy(() => import('./pages/shop/Search'));
 const ProductDetails = lazy(() => import('./pages/shop/ProductDetails'));
+const Category = lazy(() => import('./pages/shop/Category'));
+
 const ContactUs = lazy(() => import('./pages/static/ContactUs'));
 const AboutUs = lazy(() => import('./pages/static/AboutUs'));
 const Privacy = lazy(() => import('./pages/static/Privacy'));
@@ -28,11 +34,12 @@ const Refund = lazy(() => import('./pages/static/Refund'));
 const Shipping = lazy(() => import('./pages/static/Shipping'));
 const Term = lazy(() => import('./pages/static/Term'));
 
+//admin panel
 
 
 function App() {
 
-  const user = false;
+  const user = useSelector((state) => state.auth.user);
 
   return (
     <BrowserRouter>
@@ -43,6 +50,8 @@ function App() {
           {/* private */}
           <Route element={<Protector user={user} />}>
             <Route path='/profile' element={<Layout><Profile /></Layout>} />
+            <Route path='/cart' element={<Layout><Cart /></Layout>} />
+            <Route path='/orders' element={<Layout><Order /></Layout>} />
           </Route>
 
           {/* public */}
@@ -57,6 +66,10 @@ function App() {
           {/* both */}
           <Route path='/' element={<Layout><Home /></Layout>} />
           <Route path='/product-details/:id' element={<Layout><ProductDetails /></Layout>} />
+          <Route path='/search-results' element={<Layout><Search /></Layout>} />
+          <Route path='/category' element={<Layout><Category /></Layout>} />
+
+
           <Route path='/contact-us' element={<Layout><ContactUs /></Layout>} />
           <Route path='/about-us' element={<Layout><AboutUs /></Layout>} />
           <Route path='/privacy-policy' element={<Layout><Privacy /></Layout>} />
