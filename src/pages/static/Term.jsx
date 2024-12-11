@@ -5,8 +5,8 @@ const Term = () => {
     return (
         <Fragment>
             <Helmet>
-                <title>Terms And Conditions | Herbal Jivan - Embrace Wellness, Naturally</title>
-                <meta name="description" content="Discover the power of nature with Herbal Jivan. Your trusted source for herbal remedies, wellness products, and holistic health solutions crafted with care and authenticity. Embrace a healthier, natural lifestyle today." />
+                <title>Terms And Conditions | Slasa - Embrace Wellness, Naturally</title>
+                <meta name="description" content="Discover the power of nature with Slasa. Your trusted source for herbal remedies, wellness products, and holistic health solutions crafted with care and authenticity. Embrace a healthier, natural lifestyle today." />
                 <link rel="canonical" href="https://herbaljivan.netlify.app/terms-and-conditions" />
             </Helmet>
 

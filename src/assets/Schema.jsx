@@ -131,19 +131,19 @@ export const reviews = [
         rating: 4,
         name: 'Alice Johnson',
         review: 'The product worked well for me. The herbal ingredients seem effective.',
-        reviewImages: ['https://herbalmax.in/cdn/shop/files/last_6657254ff358b.jpg?v=1731665229&width=823', 'https://herbalmax.in/cdn/shop/files/71z4kkYfsuL._SL1500_9b73925c-bcca-44a7-892f-2e8119492a22.png?v=1731665232&width=823'],
+        reviewImages: [ bannerone, bannertwo ],
     },
     {
         rating: 5,
         name: 'Michael Brown',
         review: 'Excellent quality! I feel more energetic after using it. Highly recommend.',
-        reviewImages: ['https://herbalmax.in/cdn/shop/files/last_6657254ff358b.jpg?v=1731665229&width=823', 'https://herbalmax.in/cdn/shop/files/71z4kkYfsuL._SL1500_9b73925c-bcca-44a7-892f-2e8119492a22.png?v=1731665232&width=823'],
+        reviewImages: [ bannerthree, bannerfour ],
     },
     {
         rating: 3,
         name: 'Sophia Lee',
         review: 'Decent product, but I expected better packaging. Hope it improves.',
-        reviewImages: ['https://herbalmax.in/cdn/shop/files/last_6657254ff358b.jpg?v=1731665229&width=823', 'https://herbalmax.in/cdn/shop/files/71z4kkYfsuL._SL1500_9b73925c-bcca-44a7-892f-2e8119492a22.png?v=1731665232&width=823'],
+        reviewImages: [ bannerone, bannertwo ],
     },
     {
         rating: 2,
@@ -167,7 +167,7 @@ export const reviews = [
         rating: 1,
         name: 'Olivia Garcia',
         review: 'Disappointed. The product didn’t work as advertised. Waste of money.',
-        reviewImages: ['https://herbalmax.in/cdn/shop/files/last_6657254ff358b.jpg?v=1731665229&width=823', 'https://herbalmax.in/cdn/shop/files/71z4kkYfsuL._SL1500_9b73925c-bcca-44a7-892f-2e8119492a22.png?v=1731665232&width=823'],
+        reviewImages: [ bannerthree, bannerfour ],
     },
     {
         rating: 5,

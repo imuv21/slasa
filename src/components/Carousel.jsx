@@ -89,7 +89,6 @@ const Carousel = ({ heading, data }) => {
                 </Sliders>
             </div>
         </div>
-
     );
 };
 

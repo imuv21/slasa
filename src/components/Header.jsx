@@ -21,6 +21,14 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [searchInput, setSearchInput] = useState('');
 
+    const [isCatone, setIsCatone] = useState(false);
+    const [isCatwo, setIsCatwo] = useState(false);
+    const [isCathree, setIsCathree] = useState(false);
+    const [isCatfour, setIsCatfour] = useState(false);
+    const [isCatfive, setIsCatfive] = useState(false);
+    const [isCatsix, setIsCatsix] = useState(false);
+    const [isCatseven, setIsCatseven] = useState(false);
+
     //burger
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -57,7 +65,7 @@ const Header = () => {
 
     return (
         <Fragment>
-            
+
             <div className='header'>
                 <div className="flex center g10">
                     <div className='header-burger' onClick={toggleMobileMenu}>
@@ -76,9 +84,9 @@ const Header = () => {
                         <LocalMallIcon />
                         <div className="cartcount">12</div>
                     </Link>}
-                    <div className="cartIcon profileIcon" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <div className="cartIcon" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                         <AccountCircleIcon className='header-icon' />
-                        <div className={`hover-div ${isHovered ? 'visible' : ''}`}>
+                        <div className={`hover-div hoverdivone ${isHovered ? 'visible' : ''}`}>
                             <Link to='/' className='text'>Home page</Link>
                             {user && <Link to='/profile' className='text'>Profile</Link>}
                             {user && <Link to='/orders' className='text'>Orders</Link>}
@@ -91,31 +99,84 @@ const Header = () => {
             </div>
 
             <section className="catHeader">
-                <article className="catItem">
-                    <h1 className='textBig'>All Services</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatone(true)} onMouseLeave={() => setIsCatone(false)}>
+                    <h1 className='textBig'>Gardening</h1>
                     <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatone ? 'visible' : ''}`}>
+                        <Link to='/category'>Artificial Plants</Link>
+                        <Link to='/category'>Table Top</Link>
+                        <Link to='/category'>Plants Accessories</Link>
+                        <Link to='/category'>Flower Vase</Link>
+                        <Link to='/category'>Flower Bunch</Link>
+                        <Link to='/category'>Gifts</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>All Categories</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatwo(true)} onMouseLeave={() => setIsCatwo(false)}>
+                    <h1 className='textBig'>Wood</h1>
                     <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatwo ? 'visible' : ''}`}>
+                        <Link to='/category'>Wood Easel Canvas</Link>
+                        <Link to='/category'>Wood Sheet</Link>
+                        <Link to='/category'>Wood Shelves</Link>
+                        <Link to='/category'>Customize Wood</Link>
+                        <Link to='/category'>Wood Frame</Link>
+                        <Link to='/category'>Ramadan & Eid Wood</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Display Stand Acrylic</h1>
+                <article className="catItem" onMouseEnter={() => setIsCathree(true)} onMouseLeave={() => setIsCathree(false)}>
+                    <h1 className='textBig'>Acrylic</h1>
+                    <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCathree ? 'visible' : ''}`}>
+                        <Link to='/category'>Table Top</Link>
+                        <Link to='/category'>Signage</Link>
+                        <Link to='/category'>UV Printing Acrylic</Link>
+                        <Link to='/category'>Bath Accessories</Link>
+                        <Link to='/category'>Display Stand</Link>
+                        <Link to='/category'>Neon</Link>
+                        <Link to='/category'>Customize Neon</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Gift Items</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatfour(true)} onMouseLeave={() => setIsCatfour(false)}>
+                    <h1 className='textBig'>Neon</h1>
+                    <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatfour ? 'visible' : ''}`}>
+                        <Link to='/category'>Festival Neon</Link>
+                        <Link to='/category'>Celebration Neon</Link>
+                        <Link to='/category'>Office & Event</Link>
+                        <Link to='/category'>Customize</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Digital Printing</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatfive(true)} onMouseLeave={() => setIsCatfive(false)}>
+                    <h1 className='textBig'>Toys</h1>
+                    <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatfive ? 'visible' : ''}`}>
+                        <Link to='/category'>New Born</Link>
+                        <Link to='/category'>Girls</Link>
+                        <Link to='/category'>Boys</Link>
+                        <Link to='/category'>Unisex</Link>
+                        <Link to='/category'>Games</Link>
+                        <Link to='/category'>Indoor</Link>
+                        <Link to='/category'>Toys For 8-10 Year Old</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Display Stand</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatsix(true)} onMouseLeave={() => setIsCatsix(false)}>
+                    <h1 className='textBig'>Stationary</h1>
+                    <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatsix ? 'visible' : ''}`}>
+                        <Link to='/category'>Office</Link>
+                        <Link to='/category'>School</Link>
+                        <Link to='/category'>Kids</Link>
+                    </div>
                 </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Display Danglers</h1>
-                </article>
-                <article className="catItem">
-                    <h1 className='textBig'>Shop Now</h1>
+                <article className="catItem" onMouseEnter={() => setIsCatseven(true)} onMouseLeave={() => setIsCatseven(false)}>
+                    <h1 className='textBig'>Customize</h1>
+                    <ExpandMore />
+                    <div className={`hover-div hoverdivtwo ${isCatseven ? 'visible' : ''}`}>
+                        <Link to='/category'>Wood</Link>
+                        <Link to='/category'>Acrylic</Link>
+                        <Link to='/category'>Neon</Link>
+                        <Link to='/category'>Artificial Flower</Link>
+                    </div>
                 </article>
             </section>
 

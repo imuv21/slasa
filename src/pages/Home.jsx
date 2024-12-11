@@ -19,11 +19,11 @@ const Home = () => {
                 <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
                 <link rel="canonical" href="https://slasa.netlify.app/" />
             </Helmet>
-            <div className='pageTwo flexcol center' style={{ paddingTop: '0px' }}>
-                <Suspense fallback={<Loader />}>
-                    <ImageSlider images={images} interval={5000} />
-                </Suspense>
-                <Slider />
+            <Suspense fallback={<Loader />}>
+                <ImageSlider images={images} interval={5000} />
+            </Suspense>
+            <Slider />
+            <div className='pageTwo flexcol center'>
                 <Grid heading={'Featured Products'} data={products} />
                 <Carousel heading={'Best Sellers'} data={products} />
             </div>
