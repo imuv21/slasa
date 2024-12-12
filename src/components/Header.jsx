@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpandMore, Menu } from '@mui/icons-material';
 import { toast } from 'react-hot-toast';
-import { subCategories } from '../assets/schema';
+import { subCategories } from '../assets/Schema';
 import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
