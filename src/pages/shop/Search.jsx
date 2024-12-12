@@ -1,6 +1,6 @@
 import React, { Fragment, lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { products } from '../../assets/schema';
+import { products } from '../../assets/Schema';
 import Loader from '../../components/Loader/Loader';
 import { useSearchParams } from 'react-router-dom';
 import defaulImg from '../../assets/images/defaultImage.jpg';
