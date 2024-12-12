@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpandMore, Menu } from '@mui/icons-material';
 import { toast } from 'react-hot-toast';
-
+import { subCategories } from '../assets/schema';
 import logo from '../assets/images/sett-logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import SearchIcon from '@mui/icons-material/Search';
@@ -103,79 +103,77 @@ const Header = () => {
                     <h1 className='textBig'>Gardening</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatone ? 'visible' : ''}`}>
-                        <Link to='/category'>Artificial Plants</Link>
-                        <Link to='/category'>Table Top</Link>
-                        <Link to='/category'>Plants Accessories</Link>
-                        <Link to='/category'>Flower Vase</Link>
-                        <Link to='/category'>Flower Bunch</Link>
-                        <Link to='/category'>Gifts</Link>
+                        {subCategories?.Gardening && subCategories.Gardening.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCatwo(true)} onMouseLeave={() => setIsCatwo(false)}>
                     <h1 className='textBig'>Wood</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatwo ? 'visible' : ''}`}>
-                        <Link to='/category'>Wood Easel Canvas</Link>
-                        <Link to='/category'>Wood Sheet</Link>
-                        <Link to='/category'>Wood Shelves</Link>
-                        <Link to='/category'>Customize Wood</Link>
-                        <Link to='/category'>Wood Frame</Link>
-                        <Link to='/category'>Ramadan & Eid Wood</Link>
+                        {subCategories?.Wood && subCategories.Wood.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCathree(true)} onMouseLeave={() => setIsCathree(false)}>
                     <h1 className='textBig'>Acrylic</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCathree ? 'visible' : ''}`}>
-                        <Link to='/category'>Table Top</Link>
-                        <Link to='/category'>Signage</Link>
-                        <Link to='/category'>UV Printing Acrylic</Link>
-                        <Link to='/category'>Bath Accessories</Link>
-                        <Link to='/category'>Display Stand</Link>
-                        <Link to='/category'>Neon</Link>
-                        <Link to='/category'>Customize Neon</Link>
+                        {subCategories?.Acrylic && subCategories.Acrylic.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCatfour(true)} onMouseLeave={() => setIsCatfour(false)}>
                     <h1 className='textBig'>Neon</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatfour ? 'visible' : ''}`}>
-                        <Link to='/category'>Festival Neon</Link>
-                        <Link to='/category'>Celebration Neon</Link>
-                        <Link to='/category'>Office & Event</Link>
-                        <Link to='/category'>Customize</Link>
+                        {subCategories?.Neon && subCategories.Neon.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCatfive(true)} onMouseLeave={() => setIsCatfive(false)}>
                     <h1 className='textBig'>Toys</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatfive ? 'visible' : ''}`}>
-                        <Link to='/category'>New Born</Link>
-                        <Link to='/category'>Girls</Link>
-                        <Link to='/category'>Boys</Link>
-                        <Link to='/category'>Unisex</Link>
-                        <Link to='/category'>Games</Link>
-                        <Link to='/category'>Indoor</Link>
-                        <Link to='/category'>Toys For 8-10 Year Old</Link>
+                        {subCategories?.Toys && subCategories.Toys.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCatsix(true)} onMouseLeave={() => setIsCatsix(false)}>
                     <h1 className='textBig'>Stationary</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatsix ? 'visible' : ''}`}>
-                        <Link to='/category'>Office</Link>
-                        <Link to='/category'>School</Link>
-                        <Link to='/category'>Kids</Link>
+                        {subCategories?.Stationary && subCategories.Stationary.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
                 <article className="catItem" onMouseEnter={() => setIsCatseven(true)} onMouseLeave={() => setIsCatseven(false)}>
                     <h1 className='textBig'>Customize</h1>
                     <ExpandMore />
                     <div className={`hover-div hoverdivtwo ${isCatseven ? 'visible' : ''}`}>
-                        <Link to='/category'>Wood</Link>
-                        <Link to='/category'>Acrylic</Link>
-                        <Link to='/category'>Neon</Link>
-                        <Link to='/category'>Artificial Flower</Link>
+                        {subCategories?.Customize && subCategories.Customize.map((item, index) => (
+                            <Link key={index} to={`/category?query=${item}`}>
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </article>
             </section>

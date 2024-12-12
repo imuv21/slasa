@@ -1,5 +1,6 @@
 import React, { Fragment, lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useSearchParams } from 'react-router-dom';
 import { products } from '../../assets/schema';
 import Loader from '../../components/Loader/Loader';
 import defaulImg from '../../assets/images/defaultImage.jpg';
@@ -7,6 +8,8 @@ const ProductCard = lazy(() => import('../../components/ProductCard'));
 
 const Category = () => {
 
+    const [categoryParams] = useSearchParams();
+    const categoryName = categoryParams.get('query');
     const [currentPage, setCurrentPage] = useState(1);
 
     const pageSize = 5;
@@ -35,7 +38,7 @@ const Category = () => {
             <section className='pageTwo flexcol center'>
 
                 <div className="sortCat">
-                    <h1 className="heading">Category Name</h1>
+                    <h1 className="heading">{categoryName}</h1>
                     <select name="sort">
                         <option value="featured">Featured</option>
                         <option value="bestselling">Best Selling</option>
