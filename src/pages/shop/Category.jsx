@@ -1,7 +1,7 @@
 import React, { Fragment, lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
-import { products } from '../../assets/schema';
+import { products } from '../../assets/Schema';
 import Loader from '../../components/Loader/Loader';
 import defaulImg from '../../assets/images/defaultImage.jpg';
 const ProductCard = lazy(() => import('../../components/ProductCard'));
