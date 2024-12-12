@@ -1,16 +1,15 @@
 import React, { Fragment, lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { products, images } from '../assets/Schema';
+import { products, images, featuredCat } from '../assets/Schema';
 import Carousel from '../components/Carousel';
 import Grid from '../components/Grid';
 import Slider from '../components/Slider';
 import Loader from '../components/Loader/Loader';
+import Category from '../components/Category';
 const ImageSlider = lazy(() => import('../components/ImageSlider'));
 
 
 const Home = () => {
-
-    const homepage = 'https://images.unsplash.com/photo-1599104040457-fe0e8c9ae77e';
 
     return (
         <Fragment>
@@ -25,6 +24,7 @@ const Home = () => {
             <Slider />
             <div className='pageTwo flexcol center'>
                 <Grid heading={'Featured Products'} data={products} />
+                <Category heading={'Featured Category'} data={featuredCat} />
                 <Carousel heading={'Best Sellers'} data={products} />
             </div>
         </Fragment>

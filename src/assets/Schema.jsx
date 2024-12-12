@@ -293,3 +293,57 @@ export const subCategories = {
     Customize: ["Wood", "Acrylic", "Neon", "Artificial Flower"],
 };
 
+import plant from './images/plants.png';
+import table from './images/table.png';
+import frame from './images/woodFrame.png';
+import gifts from './images/gifts.png';
+import sheet from './images/sheet.png';
+import vase from './images/vase.png';
+import sign from './images/sign.png';
+import stand from './images/displaystand.png';
+import shelves from './images/shelves.png';
+import flowers from './images/flowers.png';
+
+export const featuredCat = [
+    {
+        name: "Artificial Plants",
+        image: plant,
+    },
+    {
+        name: "Table Top",
+        image: table,
+    },
+    {
+        name: "Wood Frame",
+        image: frame,
+    },
+    {
+        name: "Gifts",
+        image: gifts,
+    },
+    {
+        name: "Wood Sheet",
+        image: sheet,
+    },
+    {
+        name: "Flower Vase",
+        image: vase,
+    },
+    {
+        name: "Acrylic Signage",
+        image: sign,
+    },
+    {
+        name: "Acrylic Display Stand",
+        image: stand,
+    },
+    {
+        name: "Wood Shelves",
+        image: shelves,
+    },
+    {
+        name: "Flower Bunch",
+        image: flowers,
+    }
+];
+

@@ -1,8 +1,9 @@
 import React, { Fragment, lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { products } from '../../assets/schemas';
+import { products } from '../../assets/schema';
 import Loader from '../../components/Loader/Loader';
 import { useSearchParams } from 'react-router-dom';
+import defaulImg from '../../assets/images/defaultImage.jpg';
 const ProductCard = lazy(() => import('../../components/ProductCard'));
 
 
@@ -30,15 +31,15 @@ const Search = () => {
     return (
         <Fragment>
             <Helmet>
-                <title>Search | Herbal Jivan - Embrace Wellness, Naturally</title>
-                <meta name="description" content="Discover the power of nature with Herbal Jivan. Your trusted source for herbal remedies, wellness products, and holistic health solutions crafted with care and authenticity. Embrace a healthier, natural lifestyle today." />
-                <link rel="canonical" href="https://herbaljivan.netlify.app/search-results" />
+                <title>Slasa - Amazing deals, unbeatable prices!</title>
+                <meta name="description" content="Shop online at Slasa for a wide range of products at unbeatable prices. Discover great deals, high-quality items, and a seamless shopping experience. Slasa - Your go-to destination for affordable shopping!" />
+                <link rel="canonical" href="https://slasa.netlify.app/search-results" />
             </Helmet>
 
-            <section className='page flexcol center'>
+            <section className='pageTwo flexcol center'>
 
                 <div className="sortCat">
-                    <h1 className="text">Search results for - {query}</h1>
+                    <h1 className="textBig">Search results for - {query}</h1>
                     <select name="sort">
                         <option value="atoz">Alphabetically A to Z</option>
                         <option value="ztoa">Alphabetically Z to A</option>
@@ -51,7 +52,7 @@ const Search = () => {
                     {paginatedItems && paginatedItems.length > 0 && paginatedItems.map((pro) => (
                         <Fragment key={pro.productId}>
                             <Suspense fallback={<Loader />}>
-                                <ProductCard name={pro.name} id={pro.productId} image={pro.image ? pro.image : defaulImg} ratings={pro.ratings} originalPrice={pro.originalPrice} salePrice={pro.salePrice} />
+                                <ProductCard name={pro.name} id={pro.productId} imageOne={pro.imageOne ? pro.imageOne : defaulImg} imageTwo={pro.imageTwo ? pro.imageTwo : defaulImg} ratings={pro.ratings} originalPrice={pro.originalPrice} salePrice={pro.salePrice} />
                             </Suspense>
                         </Fragment>
                     ))}
