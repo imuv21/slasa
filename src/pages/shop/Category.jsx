@@ -6,6 +6,7 @@ import Loader from '../../components/Loader/Loader';
 import defaulImg from '../../assets/images/defaultImage.jpg';
 const ProductCard = lazy(() => import('../../components/ProductCard'));
 
+
 const Category = () => {
 
     const [categoryParams] = useSearchParams();
@@ -27,6 +28,7 @@ const Category = () => {
         currentPage * pageSize
     );
 
+    
     return (
         <Fragment>
             <Helmet>
@@ -70,6 +72,7 @@ const Category = () => {
                         </button>
                     </div>
                 )}
+
             </section>
         </Fragment>
     );

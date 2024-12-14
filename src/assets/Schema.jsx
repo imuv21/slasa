@@ -1,3 +1,4 @@
+// image slider
 import bannerone from '../assets/images/bannerONe.webp';
 import bannertwo from '../assets/images/bannerTwo.webp';
 import bannerthree from '../assets/images/bannerThree.webp';
@@ -8,6 +9,8 @@ export const images = [
 ];
 
 // products
+import tempimg from '../assets/images/homepage.jpg';
+import tempimgTwo from '../assets/images/homepagetwo.jpg';
 
 export const productDetail = {
     name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
@@ -29,10 +32,6 @@ export const productDetail = {
     reviews: [],
     questions: []
 };
-
-import tempimg from '../assets/images/homepage.jpg';
-import tempimgTwo from '../assets/images/homepagetwo.jpg';
-
 export const products = [
     {
         name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
@@ -125,25 +124,24 @@ export const products = [
         productId: 'sgrehrhii6ktbtr',
     },
 ];
-
 export const reviews = [
     {
         rating: 4,
         name: 'Alice Johnson',
         review: 'The product worked well for me. The herbal ingredients seem effective.',
-        reviewImages: [ bannerone, bannertwo ],
+        reviewImages: [bannerone, bannertwo],
     },
     {
         rating: 5,
         name: 'Michael Brown',
         review: 'Excellent quality! I feel more energetic after using it. Highly recommend.',
-        reviewImages: [ bannerthree, bannerfour ],
+        reviewImages: [bannerthree, bannerfour],
     },
     {
         rating: 3,
         name: 'Sophia Lee',
         review: 'Decent product, but I expected better packaging. Hope it improves.',
-        reviewImages: [ bannerone, bannertwo ],
+        reviewImages: [bannerone, bannertwo],
     },
     {
         rating: 2,
@@ -167,7 +165,7 @@ export const reviews = [
         rating: 1,
         name: 'Olivia Garcia',
         review: 'Disappointed. The product didn’t work as advertised. Waste of money.',
-        reviewImages: [ bannerthree, bannerfour ],
+        reviewImages: [bannerthree, bannerfour],
     },
     {
         rating: 5,
@@ -176,7 +174,6 @@ export const reviews = [
         reviewImages: [],
     },
 ];
-
 export const quests = [
     {
         name: 'John Doe',
@@ -220,8 +217,168 @@ export const quests = [
     },
 ];
 
-// orders
+
+// Orders => 'Placed / Shipped / Out for Delivery / Delivered / Cancelled'
 export const orders = [
+    {
+        orderId: 'sdghwkgphirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerfour,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerone,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerthree,
+                productId: 'sgrehklidrherhryhyulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphrjtyjirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannertwo,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerfour,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerfour,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerone,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerthree,
+                productId: 'sgrehklidrherhryhyulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphrjtyjirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannertwo,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerfour,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerfour,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerone,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannerthree,
+                productId: 'sgrehklidrherhryhyulrhtbtr',
+            },
+        ],
+    },
+    {
+        orderId: 'sdghwkgphrjtyjirghrh',
+        totalPrice: 5000,
+        time: '12:41:17 PM',
+        date: '09/17/2024',
+        orderStatus: 'Placed',
+        products: [
+            {
+                name: 'L-Glutathione - for Skin Brightening and Antioxidant Support',
+                salePrice: 953,
+                quantity: 3,
+                image: bannertwo,
+                productId: 'sgrehkliutrjrtlrhtbtr',
+            },
+            {
+                name: 'Organic Ashwagandha - Stress Relief and Immunity Booster',
+                salePrice: 5458,
+                quantity: 2,
+                image: bannerfour,
+                productId: 'sgrehkltyjjyuiulrhtbtr',
+            },
+        ],
+    },
     {
         orderId: 'sdghwkgphirghrh',
         totalPrice: 5000,
@@ -277,18 +434,17 @@ export const orders = [
     },
 ];
 
-// category
 
+// category
 export const categories = [
     'Gardening', 'Wood', 'Acrylic', 'Neon', 'Toys', 'Stationary', 'Customize'
 ];
-
 export const subCategories = {
     Gardening: ["Artificial Plants", "Table Top", "Plants Accessories", "Flower Vase", "Flower Bunch", "Gifts"],
     Wood: ["Wood Easel Canvas", "Wood Sheet", "Wood Shelves", "Customize Wood", "Wood Frame", "Ramadan & Eid Wood"],
     Acrylic: ["Table Top", "Signage", "UV Printing Acrylic", "Bath Accessories", "Display Stand", "Neon", "Customize Neon"],
-    Neon: ["Festival Neon", "Celebration Neon", "Office & Event", "Customize" ],
-    Toys: ["New Born", "Girls", "Boys", "Unisex", "Games", "Indoor", "Toys For 8-10 Year Old" ],
+    Neon: ["Festival Neon", "Celebration Neon", "Office & Event", "Customize"],
+    Toys: ["New Born", "Girls", "Boys", "Unisex", "Games", "Indoor", "Toys For 8-10 Year Old"],
     Stationary: ["Office", "School", "Kids"],
     Customize: ["Wood", "Acrylic", "Neon", "Artificial Flower"],
 };

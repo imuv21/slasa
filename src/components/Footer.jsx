@@ -14,7 +14,6 @@ const Footer = () => {
 
   return (
     <div className='footer'>
-
       <div className="subFooter">
         <img src={logo} alt="logo" />
         <div className="navCont">
@@ -53,7 +52,6 @@ const Footer = () => {
           <img src={paypal} alt="paypal" />
         </div>
       </div>
-
     </div>
   )
 }
