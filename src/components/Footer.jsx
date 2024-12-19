@@ -5,15 +5,50 @@ import visa from '../assets/images/visa.png';
 import upi from '../assets/images/upi.png';
 import paypal from '../assets/images/paypal.png';
 import mastercard from '../assets/images/mastercard.png';
+import returnimg from '../assets/images/returns.png';
+import payment from '../assets/images/secure-payment.png';
+import shipping from '../assets/images/freeshipping.png';
+import human from '../assets/images/customer-care.png';
 
 
 const Footer = () => {
 
-
-
-
   return (
     <div className='footer'>
+
+      <section className="headFooter">
+
+        <div className="headItem">
+          <img src={returnimg} alt="return" />
+          <article className="headDetails">
+            <h1 className='text fw-600'>Hassle Free Returns</h1>
+            <p className='text'>Easy and flexible 7 days return policy</p>
+          </article>
+        </div>
+        <div className="headItem">
+          <img src={payment} alt="payment" />
+          <article className="headDetails">
+            <h1 className='text fw-600'>Secure Payment</h1>
+            <p className='text'>Shop confidently with secure methods</p>
+          </article>
+        </div>
+        <div className="headItem">
+          <img src={shipping} alt="shipping" />
+          <article className="headDetails">
+            <h1 className='text fw-600'>Free Shipping</h1>
+            <p className='text'>On orders above 200 INR*</p>
+          </article>
+        </div>
+        <div className="headItem">
+          <img src={human} alt="callback" />
+          <article className="headDetails">
+            <h1 className='text fw-600'>Talk to Human</h1>
+            <p className='text'>Request a call back</p>
+          </article>
+        </div>
+
+      </section>
+
       <div className="subFooter">
         <img src={logo} alt="logo" />
         <div className="navCont">
