@@ -54,15 +54,13 @@ const Reviews = lazy(() => import('./admin/pages/Reviews'));
 const Questions = lazy(() => import('./admin/pages/Questions'));
 const ProductDetailAdmin = lazy(() => import('./admin/pages/ProductDetailAdmin'));
 const AddAdmin = lazy(() => import('./admin/pages/AddAdmin'));
-const EditAdmin = lazy(() => import('./admin/pages/EditAdmin'));
 const RoleManagement = lazy(() => import('./admin/pages/RoleManagement'));
 
 
 
 function App() {
 
-  // const user = useSelector((state) => state.auth.user);
-  const user = false;
+  const user = useSelector((state) => state.auth.user);
 
   return (
     <BrowserRouter>
@@ -94,7 +92,6 @@ function App() {
               <Route path="best-seller-products" element={<BestSeller />} />
               <Route path="featured-products" element={<Featured />} />
               <Route path="add-new-admin" element={<AddAdmin />} />
-              <Route path="edit-admin" element={<EditAdmin />} />
               <Route path="role-management" element={<RoleManagement />} />
             </Route>
           </Route> */}
@@ -116,7 +113,6 @@ function App() {
             <Route path="best-seller-products" element={<BestSeller />} />
             <Route path="featured-products" element={<Featured />} />
             <Route path="add-new-admin" element={<AddAdmin />} />
-            <Route path="edit-admin" element={<EditAdmin />} />
             <Route path="role-management" element={<RoleManagement />} />
           </Route>
 

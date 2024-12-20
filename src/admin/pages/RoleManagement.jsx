@@ -5,7 +5,6 @@ import { toast } from 'react-hot-toast';
 import DOMPurify from 'dompurify';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
@@ -64,9 +63,6 @@ const RoleManagement = () => {
     const gotoadmin = () => {
         navigate('/dashboard/add-new-admin');
     }
-    const gotoeditadmin = () => {
-        navigate('/dashboard/edit-admin');
-    }
 
 
     return (
@@ -79,9 +75,8 @@ const RoleManagement = () => {
             <div className="adminGrid">
                 {adminList && adminList.length > 0 && adminList.map((admin, index) => (
                     <div className="adminGridItem" key={index}>
-                        <p className="text fw-600">{admin.adminName}</p>
-                        <p className='text'>{admin.adminPassword.length > 2 ? `${admin.adminPassword.substring(0, 2)}******` : `********`}</p>
-                        <EditIcon className='editIcon' style={{ color: 'var(--codeFive)' }} onClick={gotoeditadmin} />
+                        <p className="text fw-600">{admin.adminName?.length > 20 ? `${admin.adminName.substring(0, 20)}...` : admin.adminName}</p>
+                        <p className='text'>{admin.adminEmail?.length > 20 ? `${admin.adminEmail.substring(0, 20)}...` : admin.adminEmail}</p>
                         <DeleteIcon className='deleteIcon' onClick={handleClickFooter} />
                     </div>
                 ))}
@@ -90,7 +85,7 @@ const RoleManagement = () => {
             <div className={`popup-btn ${isClickedFooter ? 'clicked' : ''}`}>
                 {isClickedFooter && (
                     <div className="popup">
-                        <form className="popup-wrapper" style={{gap: '10px'}} onSubmit={handleSubmit}>
+                        <form className="popup-wrapper" style={{ gap: '10px' }} onSubmit={handleSubmit}>
                             <h2 className="headingSmol" style={{ marginBottom: '15px' }}>Are you sure?</h2>
 
                             <div className="flex wh g10" style={{ marginTop: '15px', justifyContent: 'space-between' }}>
