@@ -19,7 +19,7 @@ const Home = () => {
                 <link rel="canonical" href="https://slasa.netlify.app/" />
             </Helmet>
             <Suspense fallback={<Loader />}>
-                <ImageSlider images={images} interval={5000} />
+                <ImageSlider interval={5000} />
             </Suspense>
             <Slider />
             <div className='pageTwo flexcol center'>

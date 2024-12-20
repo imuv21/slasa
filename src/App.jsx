@@ -1,8 +1,9 @@
 import './App.css';
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
+
 
 //components
 import Loader from './components/Loader/Loader';
@@ -35,11 +36,33 @@ const Shipping = lazy(() => import('./pages/static/Shipping'));
 const Term = lazy(() => import('./pages/static/Term'));
 
 //admin panel
+const AdminLogin = lazy(() => import('./admin/pages/AdminLogin'));
+const Dashboard = lazy(() => import('./admin/pages/Dashboard'));
+const AddNewProduct = lazy(() => import('./admin/pages/AddNewProduct'));
+const EditProduct = lazy(() => import('./admin/pages/EditProduct'));
+const ProductList = lazy(() => import('./admin/pages/ProductList'));
+const TopRated = lazy(() => import('./admin/pages/TopRated'));
+const BestSeller = lazy(() => import('./admin/pages/BestSeller'));
+const Featured = lazy(() => import('./admin/pages/Featured'));
+const CategoryList = lazy(() => import('./admin/pages/CategoryList'));
+const UsersList = lazy(() => import('./admin/pages/UsersList'));
+const OrdersList = lazy(() => import('./admin/pages/OrdersList'));
+const ReviewsList = lazy(() => import('./admin/pages/ReviewsList'));
+const QuestionsList = lazy(() => import('./admin/pages/QuestionsList'));
+const UserOrder = lazy(() => import('./admin/pages/UserOrder'));
+const Reviews = lazy(() => import('./admin/pages/Reviews'));
+const Questions = lazy(() => import('./admin/pages/Questions'));
+const ProductDetailAdmin = lazy(() => import('./admin/pages/ProductDetailAdmin'));
+const AddAdmin = lazy(() => import('./admin/pages/AddAdmin'));
+const EditAdmin = lazy(() => import('./admin/pages/EditAdmin'));
+const RoleManagement = lazy(() => import('./admin/pages/RoleManagement'));
+
 
 
 function App() {
 
-  const user = useSelector((state) => state.auth.user);
+  // const user = useSelector((state) => state.auth.user);
+  const user = false;
 
   return (
     <BrowserRouter>
@@ -47,14 +70,64 @@ function App() {
         <Toaster />
         <Routes>
 
-          {/* private */}
-          <Route element={<Protector user={user} />}>
+          {/* admin routes (public) */}
+          <Route element={<Protector user={!user} redirect='/' />}>
+            <Route path='/admin/login' element={<AdminLogin />} />
+          </Route>
+
+          {/* admin routes (private) */}
+          {/* <Route element={<Protector user={user} requiredRole="ADMIN" redirect="/admin/login" />}>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="add-new-product" element={<AddNewProduct />} />
+              <Route path="edit-product/:id" element={<EditProduct />} />
+              <Route path="category-list" element={<CategoryList />} />
+              <Route path="orders-list" element={<OrdersList />} />
+              <Route path="reviews-list" element={<ReviewsList />} />
+              <Route path="questions-list" element={<QuestionsList />} />
+              <Route path="user-list" element={<UsersList />} />
+              <Route path="user-list/user-orders/:id" element={<UserOrder />} />
+              <Route path="user-list/user-reviews/:id" element={<Reviews />} />
+              <Route path="user-list/user-questions/:id" element={<Questions />} />
+              <Route path="product-list" element={<ProductList />} />
+              <Route path="product-list/product-details/:id" element={<ProductDetailAdmin />} />
+              <Route path="top-rated-products" element={<TopRated />} />
+              <Route path="best-seller-products" element={<BestSeller />} />
+              <Route path="featured-products" element={<Featured />} />
+              <Route path="add-new-admin" element={<AddAdmin />} />
+              <Route path="edit-admin" element={<EditAdmin />} />
+              <Route path="role-management" element={<RoleManagement />} />
+            </Route>
+          </Route> */}
+
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="add-new-product" element={<AddNewProduct />} />
+            <Route path="edit-product/:id" element={<EditProduct />} />
+            <Route path="category-list" element={<CategoryList />} />
+            <Route path="orders-list" element={<OrdersList />} />
+            <Route path="reviews-list" element={<ReviewsList />} />
+            <Route path="questions-list" element={<QuestionsList />} />
+            <Route path="user-list" element={<UsersList />} />
+            <Route path="user-list/user-orders/:id" element={<UserOrder />} />
+            <Route path="user-list/user-reviews/:id" element={<Reviews />} />
+            <Route path="user-list/user-questions/:id" element={<Questions />} />
+            <Route path="product-list" element={<ProductList />} />
+            <Route path="product-list/product-details/:id" element={<ProductDetailAdmin />} />
+            <Route path="top-rated-products" element={<TopRated />} />
+            <Route path="best-seller-products" element={<BestSeller />} />
+            <Route path="featured-products" element={<Featured />} />
+            <Route path="add-new-admin" element={<AddAdmin />} />
+            <Route path="edit-admin" element={<EditAdmin />} />
+            <Route path="role-management" element={<RoleManagement />} />
+          </Route>
+
+          {/* user routes (private) */}
+          <Route element={<Protector user={user} requiredRole="USER" redirect="/login" />}>
             <Route path='/profile' element={<Layout><Profile /></Layout>} />
             <Route path='/cart' element={<Layout><Cart /></Layout>} />
             <Route path='/orders' element={<Layout><Order /></Layout>} />
           </Route>
 
-          {/* public */}
+          {/* user routes (public) */}
           <Route element={<Protector user={!user} redirect='/' />}>
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
@@ -63,12 +136,11 @@ function App() {
             <Route path='/new-password' element={<NewPassword />} />
           </Route>
 
-          {/* both */}
+          {/* user routes (public & private) */}
           <Route path='/' element={<Layout><Home /></Layout>} />
           <Route path='/product-details/:id' element={<Layout><ProductDetails /></Layout>} />
           <Route path='/search-results' element={<Layout><Search /></Layout>} />
           <Route path='/category' element={<Layout><Category /></Layout>} />
-
 
           <Route path='/contact-us' element={<Layout><ContactUs /></Layout>} />
           <Route path='/about-us' element={<Layout><AboutUs /></Layout>} />
@@ -78,7 +150,7 @@ function App() {
           <Route path='/terms-and-conditions' element={<Layout><Term /></Layout>} />
 
           {/* not found */}
-          <Route path='*' element={<div className='page flex center wh'>Are you kidding me? Kuchh bhi!</div>} />
+          <Route path='*' element={<div className='page flex center wh'>The path does not exist!</div>} />
 
         </Routes>
       </Suspense>

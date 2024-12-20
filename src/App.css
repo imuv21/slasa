@@ -882,6 +882,7 @@ button:focus {
   left: 0px;
   border-radius: 0px;
 }
+
 .hoverdivtwo a {
   font-size: 15px;
   padding: 6px 0px;
@@ -970,6 +971,7 @@ button:focus {
   gap: 20px;
   padding-bottom: 10px;
 }
+
 .headItem {
   flex: 1;
   min-width: 250px;
@@ -979,12 +981,14 @@ button:focus {
   gap: 10px;
   padding: 10px;
 }
+
 .headItem img {
   width: 80px;
   height: auto;
   object-fit: contain;
   aspect-ratio: 1/1;
 }
+
 .headDetails {
   width: fit-content;
   display: flex;
@@ -995,6 +999,7 @@ button:focus {
   gap: 10px;
   padding: 10px;
 }
+
 .headDetails .text {
   width: 100%;
   text-align: left;
@@ -2647,6 +2652,415 @@ button:focus {
 
 
 
+
+
+
+
+/* accordion and panel - admin panel - dashboard*/
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.adminPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: var(--codeOne);
+  overflow-y: scroll;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  border-right: 1px solid var(--codeTwo);
+}
+
+.accordionCover {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion__item {
+  width: 100%;
+  border-bottom: 1px solid var(--codeTwo);
+  overflow: hidden;
+}
+
+.accordion__item .accordion__content {
+  padding: 0px 10px;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  overflow: hidden;
+}
+
+.accordion__header {
+  padding: 20px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: var(--trans);
+}
+
+.accordion__header::after {
+  content: '';
+  background: url(https://www.svgrepo.com/show/357035/angle-down.svg) no-repeat center;
+  width: 20px;
+  height: 20px;
+  transition: 0.4s;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.accordion__header.active {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(215, 236, 255, 1) 100%);
+}
+
+.accordion__header.active::after {
+  transform: rotateX(180deg);
+}
+
+.brickCover {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 0px;
+}
+
+.brick {
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fbfbfb;
+  color: var(--codeFour);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.brick.active {
+  background-color: #eef5fb;
+}
+
+.brick img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}
+
+.admin-logo {
+  padding: 32px 0px;
+}
+
+.admin-logo img {
+  width: 150px;
+  object-fit: contain;
+  aspect-ratio: 4/1;
+  cursor: pointer;
+}
+
+
+/* products section - admin */
+.actionIcons {
+  position: absolute;
+  top: 50px;
+  left: 90%;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition: var(--trans);
+  z-index: 3;
+}
+.actionIcons .MuiSvgIcon-root {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.productForm {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.adminGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 10px;
+}
+
+.adminCatGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.adminGridItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #efefef, #f8f8f8);
+  border-radius: var(--brTwo);
+  transition: var(--trans);
+}
+
+.adminGridItem .MuiSvgIcon-root {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  transition: var(--trans);
+  opacity: 0;
+}
+.adminGridItem .MuiSvgIcon-root:hover {
+  transform: scale(1.2);
+}
+.show-img-detail-sub-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  gap: 10px;
+  opacity: 0;
+  transition: var(--trans);
+  z-index: 10;
+}
+.show-img-detail-sub-admin .MuiSvgIcon-root {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: var(--trans);
+}
+.show-img-detail-sub-admin .MuiSvgIcon-root:hover {
+  transform: scale(1.2);
+}
+.show-img-detail-sub:hover .show-img-detail-sub-admin {
+  opacity: 1;
+}
+
+
+.editIcon {
+  top: 10px;
+  right: 10px;
+  color: var(--codeSix);
+}
+
+.deleteIcon {
+  top: 35px;
+  right: 10px;
+  color: var(--codeFour);
+}
+
+.adminGridItem:hover {
+  box-shadow: 5px 5px 10px #d5d5d5, -5px -5px 10px #ffffff;
+}
+
+.adminGridItem:hover .MuiSvgIcon-root {
+  opacity: 1;
+}
+
+
+.adminGridItem img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 4/3;
+}
+
+
+/* users section - admin */
+.usersList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.userRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--codeTwo);
+}
+.userRow:first-child {
+  border-bottom: 2px solid var(--codeTwo);
+}
+
+.userRowTwo {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--codeTwo);
+}
+.userRowTwo:first-child {
+  border-bottom: 2px solid var(--codeTwo);
+}
+
+.index,
+.seeBtns {
+  gap: 5px;
+  padding: 10px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.email {
+  width: 100%;
+  gap: 5px;
+  padding: 10px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.datePriceNum {
+  width: 600px;
+  gap: 5px;
+  padding: 10px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.index {
+  width: 100%;
+  max-width: 100px;
+}
+.seeBtns {
+  width: 100%;
+  max-width: 220px;
+}
+
+.seeBtns button {
+  padding: 5px 10px;
+}
+.seeBtns select {
+  padding: 5px 10px;
+}
+.backSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.backSection .MuiSvgIcon-root {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.reviewAdCont {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.reviewAd {
+  width: 100%;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.reviewAdImages {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.reviewAdImages img {
+  width: 100px;
+  object-fit: contain;
+  aspect-ratio: 2/1.5;
+  outline: 1px solid var(--codeTwo);
+}
+
+/* role management - admin */
+
+.passwordAdmin span {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+}
+.passwordAdmin span .MuiSvgIcon-root {
+  color: var(--codeThree);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* common styling */
 
 .minBox {
@@ -2918,9 +3332,11 @@ button:focus {
   .headFooter {
     gap: 5px;
   }
+
   .headItem img {
     width: 50px;
   }
+
   .headDetails {
     gap: 5px;
   }
